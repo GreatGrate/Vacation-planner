@@ -13,8 +13,10 @@
 		2EA6BF7220FE55E4001C7F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA6BF7120FE55E4001C7F42 /* Assets.xcassets */; };
 		2EA6BF7520FE55E4001C7F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA6BF7320FE55E4001C7F42 /* LaunchScreen.storyboard */; };
 		2EA6BF7E20FE5D6F001C7F42 /* placesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6BF7D20FE5D6F001C7F42 /* placesTableViewController.swift */; };
-		2EA6BF8020FE6BFE001C7F42 /* listCountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6BF7F20FE6BFE001C7F42 /* listCountriesTableViewCell.swift */; };
 		9C3037659C67ED6654AB4598 /* Pods_Vacation_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93A045A6521637F1FDB15D6 /* Pods_Vacation_Planner.framework */; };
+		FA41B15220FF8880003FC6FC /* ListAttractionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41B15120FF8880003FC6FC /* ListAttractionsTableViewController.swift */; };
+		FABD607820FF8DC400CD61B0 /* AttractionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD607720FF8DC400CD61B0 /* AttractionClass.swift */; };
+		FABD607A20FF8F2300CD61B0 /* ListAttractionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD607920FF8F2300CD61B0 /* ListAttractionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +28,12 @@
 		2EA6BF7420FE55E4001C7F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EA6BF7620FE55E4001C7F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EA6BF7D20FE5D6F001C7F42 /* placesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placesTableViewController.swift; sourceTree = "<group>"; };
-		2EA6BF7F20FE6BFE001C7F42 /* listCountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listCountriesTableViewCell.swift; sourceTree = "<group>"; };
 		488294AEA60EE69C36E50AAF /* Pods-Vacation Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation Planner/Pods-Vacation Planner.release.xcconfig"; sourceTree = "<group>"; };
 		DD40BB8F31B07746A0704DA4 /* Pods-Vacation Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vacation Planner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vacation Planner/Pods-Vacation Planner.debug.xcconfig"; sourceTree = "<group>"; };
 		E93A045A6521637F1FDB15D6 /* Pods_Vacation_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vacation_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA41B15120FF8880003FC6FC /* ListAttractionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAttractionsTableViewController.swift; sourceTree = "<group>"; };
+		FABD607720FF8DC400CD61B0 /* AttractionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionClass.swift; sourceTree = "<group>"; };
+		FABD607920FF8F2300CD61B0 /* ListAttractionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAttractionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,9 @@
 				2EA6BF7320FE55E4001C7F42 /* LaunchScreen.storyboard */,
 				2EA6BF7620FE55E4001C7F42 /* Info.plist */,
 				2EA6BF7D20FE5D6F001C7F42 /* placesTableViewController.swift */,
-				2EA6BF7F20FE6BFE001C7F42 /* listCountriesTableViewCell.swift */,
+				FA41B15120FF8880003FC6FC /* ListAttractionsTableViewController.swift */,
+				FABD607920FF8F2300CD61B0 /* ListAttractionsTableViewCell.swift */,
+				FABD607720FF8DC400CD61B0 /* AttractionClass.swift */,
 			);
 			path = "Vacation Planner";
 			sourceTree = "<group>";
@@ -188,10 +194,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Vacation Planner/Pods-Vacation Planner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,10 +214,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EA6BF8020FE6BFE001C7F42 /* listCountriesTableViewCell.swift in Sources */,
 				2EA6BF6D20FE55E4001C7F42 /* ViewController.swift in Sources */,
 				2EA6BF6B20FE55E4001C7F42 /* AppDelegate.swift in Sources */,
+				FABD607A20FF8F2300CD61B0 /* ListAttractionsTableViewCell.swift in Sources */,
+				FA41B15220FF8880003FC6FC /* ListAttractionsTableViewController.swift in Sources */,
 				2EA6BF7E20FE5D6F001C7F42 /* placesTableViewController.swift in Sources */,
+				FABD607820FF8DC400CD61B0 /* AttractionClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
-platform :ios, '8.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'Vacation Planner' do
-    pod 'SwiftyJSON', '~> 4.0'
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
 end
