@@ -47,8 +47,12 @@ class ListAttractionsTableViewController: UITableViewController {
         }
     }
     
-    
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func addNoteButtonPressed(sender: UIButton) {
+        print("addNoteButton pressed")
+        print("\(sender.tag)")
     }
     
     override func viewDidLoad() {
@@ -62,12 +66,14 @@ class ListAttractionsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListAttractionsTableViewCell", for: indexPath) as! ListAttractionsTableViewCell
 
         let attraction = attractions[indexPath.row]
         cell.nameTitleLabel.text = attraction.name
         cell.ratingLabel.text = String(attraction.rating)+"⭐"
-
+        cell.addressLabel.text = attraction.address
+        cell.addNoteButton.tag = indexPath.row
         return cell
     }
 }

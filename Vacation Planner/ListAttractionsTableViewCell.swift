@@ -12,5 +12,9 @@ class ListAttractionsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameTitleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var attractionImage: UIImageView!
+    @IBOutlet weak var addNoteButton: UIButton!
+    
     
 }

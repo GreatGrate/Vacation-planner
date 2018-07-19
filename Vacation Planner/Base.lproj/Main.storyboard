@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,39 +109,72 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListAttractionsTableViewCell" rowHeight="75" id="8IQ-Ja-KBh" customClass="ListAttractionsTableViewCell" customModule="Vacation_Planner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="75"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListAttractionsTableViewCell" rowHeight="80" id="8IQ-Ja-KBh" customClass="ListAttractionsTableViewCell" customModule="Vacation_Planner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8IQ-Ja-KBh" id="9oQ-0I-a3z">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8IQ-Ja-KBh" id="9oQ-0I-a3z">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-1i-YUx">
-                                            <rect key="frame" x="5" y="2" width="365" height="67.5"/>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ATs-1i-YUx">
+                                            <rect key="frame" x="5" y="2" width="365" height="72.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMJ-MM-6eU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="365" height="46"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMJ-MM-6eU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="365" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <color key="textColor" red="0.078431372550000003" green="0.37254901960784315" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brn-48-gFK">
-                                                    <rect key="frame" x="0.0" y="46" width="365" height="21.5"/>
+                                                    <rect key="frame" x="0.0" y="31.5" width="365" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56X-DW-XHX">
+                                                    <rect key="frame" x="0.0" y="51" width="365" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.69995241116751261" green="0.69995241116751261" blue="0.69995241116751261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="brn-48-gFK" firstAttribute="leading" secondItem="ATs-1i-YUx" secondAttribute="leading" id="4GO-4A-33c"/>
+                                                <constraint firstItem="56X-DW-XHX" firstAttribute="leading" secondItem="ATs-1i-YUx" secondAttribute="leading" id="5JB-au-tjS"/>
+                                                <constraint firstItem="LMJ-MM-6eU" firstAttribute="top" secondItem="ATs-1i-YUx" secondAttribute="top" id="5QO-J4-m99"/>
+                                                <constraint firstItem="56X-DW-XHX" firstAttribute="top" secondItem="brn-48-gFK" secondAttribute="bottom" id="VY2-Qz-P5g"/>
+                                                <constraint firstItem="brn-48-gFK" firstAttribute="top" secondItem="LMJ-MM-6eU" secondAttribute="bottom" id="Xzx-qo-hIu"/>
+                                                <constraint firstItem="brn-48-gFK" firstAttribute="top" secondItem="LMJ-MM-6eU" secondAttribute="bottom" id="aSu-D1-4sZ"/>
+                                                <constraint firstItem="LMJ-MM-6eU" firstAttribute="leading" secondItem="ATs-1i-YUx" secondAttribute="leading" id="esm-sF-HtF"/>
+                                                <constraint firstItem="56X-DW-XHX" firstAttribute="top" secondItem="brn-48-gFK" secondAttribute="bottom" id="kUk-5e-VHE"/>
+                                                <constraint firstAttribute="bottom" secondItem="56X-DW-XHX" secondAttribute="bottom" id="r4p-MN-R3L"/>
+                                            </constraints>
                                         </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dl1-q8-CHC">
+                                            <rect key="frame" x="306" y="16" width="48" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="dl1-q8-CHC" secondAttribute="height" id="dg3-cq-Mfz"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="addNoteButtonPressedWithSender:" destination="cuD-ci-wGV" eventType="touchUpInside" id="M2t-Jz-XnA"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="ATs-1i-YUx" secondAttribute="trailing" constant="5" id="AAS-oQ-A4k"/>
-                                        <constraint firstItem="ATs-1i-YUx" firstAttribute="leading" secondItem="9oQ-0I-a3z" secondAttribute="leading" constant="5" id="VDs-34-TZe"/>
+                                        <constraint firstItem="ATs-1i-YUx" firstAttribute="leading" secondItem="9oQ-0I-a3z" secondAttribute="leading" constant="5" id="WIa-Gd-DQi"/>
+                                        <constraint firstItem="dl1-q8-CHC" firstAttribute="top" secondItem="9oQ-0I-a3z" secondAttribute="topMargin" constant="5" id="dqe-hp-gyW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dl1-q8-CHC" secondAttribute="trailing" constant="5" id="n10-YB-HUT"/>
+                                        <constraint firstItem="dl1-q8-CHC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9oQ-0I-a3z" secondAttribute="leadingMargin" id="s6D-Fy-Ngu"/>
                                         <constraint firstAttribute="bottom" secondItem="ATs-1i-YUx" secondAttribute="bottom" constant="5" id="ttn-SV-i7N"/>
                                         <constraint firstItem="ATs-1i-YUx" firstAttribute="top" secondItem="9oQ-0I-a3z" secondAttribute="top" constant="2" id="vz7-kK-7E0"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dl1-q8-CHC" secondAttribute="bottom" constant="5" id="zya-KP-uJr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addNoteButton" destination="dl1-q8-CHC" id="wTp-k7-NdF"/>
+                                    <outlet property="addressLabel" destination="56X-DW-XHX" id="9OC-bj-JvN"/>
                                     <outlet property="nameTitleLabel" destination="LMJ-MM-6eU" id="KvZ-Xz-c9h"/>
                                     <outlet property="ratingLabel" destination="brn-48-gFK" id="BkB-Yi-RPD"/>
                                 </connections>
@@ -156,7 +191,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4a-Wu-oeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="862" y="134"/>
+            <point key="canvasLocation" x="861.60000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
