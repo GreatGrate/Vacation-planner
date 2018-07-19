@@ -11,8 +11,17 @@ import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
+    
+    var expectedAttraction: Attraction?
 
     @IBOutlet weak var placesButton: UIButton!
+    @IBAction func createPlan(segue: UIStoryboardSegue) {
+        if expectedAttraction != nil {
+            print("Segued back to main screen from \(expectedAttraction!.name)")
+        } else {
+            print("Segued back from unknown attraction")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

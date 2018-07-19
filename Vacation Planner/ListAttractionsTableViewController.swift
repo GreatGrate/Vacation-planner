@@ -16,6 +16,7 @@ class ListAttractionsTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    var attractionReturned: Attraction?
     
     @IBOutlet weak var searchInputTextField: UITextField!
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -51,8 +52,16 @@ class ListAttractionsTableViewController: UITableViewController {
     }
     
     @IBAction func addNoteButtonPressed(sender: UIButton) {
-        print("addNoteButton pressed")
-        print("\(sender.tag)")
+        print("addNoteButton pressed by button \(sender.tag) that belongs to \(attractions[sender.tag].name)")
+        attractionReturned = attractions[sender.tag]
+        self.performSegue(withIdentifier: "createPlan", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createPlan" {
+            let controller = segue.destination as! ViewController
+            controller.expectedAttraction = attractionReturned
+        }
     }
     
     override func viewDidLoad() {
