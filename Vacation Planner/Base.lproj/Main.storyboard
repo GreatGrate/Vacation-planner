@@ -37,12 +37,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPd-xR-zHM">
-                                <rect key="frame" x="15" y="79" width="345" height="463"/>
+                                <rect key="frame" x="15" y="79" width="345" height="451"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="451" id="aN7-te-gsS"/>
+                                </constraints>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNU-uE-kv8">
-                                <rect key="frame" x="15" y="592" width="345" height="60"/>
+                                <rect key="frame" x="15" y="602" width="150" height="50"/>
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="yFg-mK-Rvn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="Places">
                                     <color key="titleColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -50,15 +56,32 @@
                                     <segue destination="cuD-ci-wGV" kind="show" id="WaJ-eq-0vl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx4-xz-Qlo">
+                                <rect key="frame" x="210" y="602" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ZBg-gB-XHZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Planner">
+                                    <color key="titleColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="l3a-I7-wc2" kind="show" id="QAZ-Ci-Dlz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jPd-xR-zHM" secondAttribute="trailing" constant="15" id="32T-y2-MgM"/>
-                            <constraint firstItem="DNU-uE-kv8" firstAttribute="top" secondItem="jPd-xR-zHM" secondAttribute="bottom" constant="50" id="I8D-sE-P0G"/>
-                            <constraint firstItem="DNU-uE-kv8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="VGw-hq-4xA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DNU-uE-kv8" secondAttribute="trailing" constant="15" id="YSo-0B-md0"/>
+                            <constraint firstItem="wx4-xz-Qlo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DNU-uE-kv8" secondAttribute="trailing" constant="40" id="4po-Ak-opl"/>
+                            <constraint firstItem="DNU-uE-kv8" firstAttribute="top" secondItem="jPd-xR-zHM" secondAttribute="bottom" constant="72" id="LLQ-MB-seV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DNU-uE-kv8" secondAttribute="bottom" constant="15" id="X4T-ym-7D9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wx4-xz-Qlo" secondAttribute="trailing" constant="15" id="dit-1E-k7m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wx4-xz-Qlo" secondAttribute="bottom" constant="15" id="giN-EZ-A6Q"/>
+                            <constraint firstItem="wx4-xz-Qlo" firstAttribute="top" secondItem="jPd-xR-zHM" secondAttribute="bottom" constant="72" id="hsy-jw-Zhs"/>
                             <constraint firstItem="jPd-xR-zHM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="omu-hS-vD2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DNU-uE-kv8" secondAttribute="bottom" constant="15" id="wZd-Ws-gUn"/>
+                            <constraint firstItem="DNU-uE-kv8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="xLK-gt-4sR"/>
                             <constraint firstItem="jPd-xR-zHM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="yi1-ik-zbg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -70,11 +93,46 @@
                     </navigationItem>
                     <connections>
                         <outlet property="placesButton" destination="DNU-uE-kv8" id="lYR-s3-e9u"/>
+                        <outlet property="plannerButton" destination="wx4-xz-Qlo" id="qLx-48-ob1"/>
+                        <segue destination="l3a-I7-wc2" kind="show" identifier="createPlan" id="245-J6-hAE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="134"/>
+            <point key="canvasLocation" x="120.8" y="133.5832083958021"/>
+        </scene>
+        <!--Planner-->
+        <scene sceneID="7OI-hg-jsj">
+            <objects>
+                <viewController title="Planner" id="l3a-I7-wc2" customClass="plannerController" customModule="Vacation_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qQn-gb-zSc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I3D-rS-Hcf">
+                                <rect key="frame" x="15" y="79" width="345" height="573"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I3D-rS-Hcf" firstAttribute="leading" secondItem="dbJ-pn-PwG" secondAttribute="leading" constant="15" id="cvE-qA-ypg"/>
+                            <constraint firstItem="I3D-rS-Hcf" firstAttribute="top" secondItem="dbJ-pn-PwG" secondAttribute="top" constant="15" id="dXH-Qc-Eh6"/>
+                            <constraint firstItem="dbJ-pn-PwG" firstAttribute="bottom" secondItem="I3D-rS-Hcf" secondAttribute="bottom" constant="15" id="dkp-xW-jAl"/>
+                            <constraint firstAttribute="trailing" secondItem="I3D-rS-Hcf" secondAttribute="trailing" constant="15" id="h06-AE-w7c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dbJ-pn-PwG"/>
+                    </view>
+                    <connections>
+                        <outlet property="plannerTextView" destination="I3D-rS-Hcf" id="PZn-Ga-hec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9O1-o4-oyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="903"/>
         </scene>
         <!--Attractions-->
         <scene sceneID="s7X-1l-SEg">
@@ -213,4 +271,7 @@
     <resources>
         <image name="SearchIcon" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="245-J6-hAE"/>
+    </inferredMetricsTieBreakers>
 </document>
