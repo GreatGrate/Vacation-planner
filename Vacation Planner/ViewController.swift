@@ -26,7 +26,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        placesButton.layer.cornerRadius = 8.0
+        placesButton.clipsToBounds = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
