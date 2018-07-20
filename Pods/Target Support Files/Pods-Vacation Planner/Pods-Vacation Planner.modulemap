@@ -1,0 +1,6 @@
+framework module Pods_Vacation_Planner {
+  umbrella header "Pods-Vacation Planner-umbrella.h"
+
+  export *
+  module * { export * }
+}
